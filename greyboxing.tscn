@@ -1,0 +1,121 @@
+[gd_scene load_steps=16 format=3 uid="uid://dl2rkyoea3ao8"]
+
+[ext_resource type="Material" uid="uid://bh7gwb058rpus" path="res://greyboxing/mat_light_grey.tres" id="1_hpkpe"]
+[ext_resource type="Material" uid="uid://ddwfc13q63ehk" path="res://greyboxing/mat_dark_grey.tres" id="2_n4rb7"]
+[ext_resource type="Material" uid="uid://3q1cc6v8fy3l" path="res://greyboxing/mat_greyish_blue.tres" id="3_oejsf"]
+[ext_resource type="Material" uid="uid://y7xt6ie14j8t" path="res://greyboxing/mat_light_brown.tres" id="4_1a3tg"]
+[ext_resource type="Texture2D" uid="uid://cuigmkbioto7y" path="res://greyboxing/spark_02.png" id="4_rq656"]
+[ext_resource type="Script" uid="uid://b7nrevqtgli83" path="res://particle_controller.gd" id="5_8gvve"]
+[ext_resource type="Material" uid="uid://w5nraop70cnb" path="res://greyboxing/mat_gold.tres" id="5_rq656"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_oejsf"]
+material = ExtResource("1_hpkpe")
+size = Vector2(50, 50)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qxd3q"]
+material = ExtResource("2_n4rb7")
+size = Vector3(4, 3, 0.2)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qxd3q"]
+material = ExtResource("3_oejsf")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_oejsf"]
+lifetime_randomness = 0.7
+initial_velocity_max = 11.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8gvve"]
+transparency = 1
+albedo_texture = ExtResource("4_rq656")
+
+[sub_resource type="QuadMesh" id="QuadMesh_1a3tg"]
+material = SubResource("StandardMaterial3D_8gvve")
+
+[sub_resource type="BoxMesh" id="BoxMesh_77vbc"]
+material = ExtResource("4_1a3tg")
+size = Vector3(0.8, 0.8, 0.8)
+
+[sub_resource type="SphereMesh" id="SphereMesh_oejsf"]
+material = ExtResource("5_rq656")
+radius = 0.2
+height = 0.001
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.99999136, -0.0041538714, 0, 0.0041538714, 0.99999136, 9.615083, -0.016008377, 9.675616)
+mesh = SubResource("PlaneMesh_oejsf")
+
+[node name="Wall01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1.5, 12)
+mesh = SubResource("BoxMesh_qxd3q")
+
+[node name="Wall02" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.5, 12)
+mesh = SubResource("BoxMesh_qxd3q")
+
+[node name="Wall03" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.5, 6)
+mesh = SubResource("BoxMesh_qxd3q")
+
+[node name="Wall04" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5, 6)
+mesh = SubResource("BoxMesh_qxd3q")
+
+[node name="Wall05" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1.5, 0)
+mesh = SubResource("BoxMesh_qxd3q")
+
+[node name="Wall06" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.5, 0)
+mesh = SubResource("BoxMesh_qxd3q")
+
+[node name="Wall07" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.5, -6)
+mesh = SubResource("BoxMesh_qxd3q")
+
+[node name="Wall08" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5, -6)
+mesh = SubResource("BoxMesh_qxd3q")
+
+[node name="RobotObj" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08549476, 0.4400487, 0.101715565)
+mesh = SubResource("CylinderMesh_qxd3q")
+
+[node name="SparkParticle3D" type="GPUParticles3D" parent="RobotObj"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.5)
+amount = 21
+process_material = SubResource("ParticleProcessMaterial_oejsf")
+draw_pass_1 = SubResource("QuadMesh_1a3tg")
+
+[node name="ParticleController" type="Node3D" parent="RobotObj"]
+script = ExtResource("5_8gvve")
+
+[node name="Obj1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.008676, 0.30803302, -10.00757)
+mesh = SubResource("BoxMesh_77vbc")
+
+[node name="Obj2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.729649, 0.38049257, -1.2417469)
+mesh = SubResource("BoxMesh_77vbc")
+
+[node name="Obj3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.21444032, -0.58843493, 0.7795893, -0.9395552, 0.34239727, 0, -0.2669293, -0.7324673, -0.626291, 1.6929324, 0.17355067, 5.757983)
+mesh = SubResource("BoxMesh_77vbc")
+
+[node name="Obj4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.21444032, -0.58843493, 0.7795893, -0.9395552, 0.34239727, 0, -0.2669293, -0.7324673, -0.626291, -4.59, 0.169, 4.452)
+mesh = SubResource("BoxMesh_77vbc")
+
+[node name="Coin01" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9999885, 0, -0.004799637, 0.004798929, 0.017173236, 0.99984103, 8.24253e-05, -0.99985254, 0.017173039, 3.893585, 0.22977746, -10.148351)
+mesh = SubResource("SphereMesh_oejsf")
+
+[node name="Coin02" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9999885, 0, -0.004799637, 0.004798929, 0.017173236, 0.99984103, 8.24253e-05, -0.99985254, 0.017173039, 3.711158, 0.7772634, -10.583696)
+mesh = SubResource("SphereMesh_oejsf")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 10, 20)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 10, 10)

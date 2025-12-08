@@ -1,0 +1,5 @@
+*.import
+*.uid
+.godot/
+.DS_Store
+._*
