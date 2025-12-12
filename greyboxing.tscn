@@ -1,14 +1,15 @@
-[gd_scene load_steps=22 format=3 uid="uid://dl2rkyoea3ao8"]
+[gd_scene load_steps=23 format=3 uid="uid://dl2rkyoea3ao8"]
 
-[ext_resource type="Material" path="res://a-3/Materials/ConcreteMaterial.tres" id="1_h5oe0"]
-[ext_resource type="Material" path="res://a-3/Materials/BrickWallMaterial.tres" id="2_lnqwb"]
-[ext_resource type="Material" path="res://a-3/Materials/RobotArmMaterial.tres" id="3_axsqh"]
+[ext_resource type="Material" uid="uid://upcdg66i0d10" path="res://a-3/Materials/ConcreteMaterial.tres" id="1_h5oe0"]
+[ext_resource type="Material" uid="uid://b8ngi8re5pu78" path="res://a-3/Materials/BrickWallMaterial.tres" id="2_lnqwb"]
+[ext_resource type="Material" uid="uid://bmdy5blo0ccm8" path="res://a-3/Materials/RobotArmMaterial.tres" id="3_axsqh"]
 [ext_resource type="Texture2D" uid="uid://xq5hlvgcj18q" path="res://greyboxing/spark_02.png" id="4_rq656"]
 [ext_resource type="Script" uid="uid://b7nrevqtgli83" path="res://particle_controller.gd" id="5_8gvve"]
 [ext_resource type="Script" uid="uid://y62dyq77vnth" path="res://breaker_area.gd" id="6_h5oe0"]
-[ext_resource type="Material" path="res://a-3/Materials/FuturisticPanelMaterial.tres" id="7_3eifs"]
+[ext_resource type="Material" uid="uid://byq5o4pug7bf0" path="res://a-3/Materials/FuturisticPanelMaterial.tres" id="7_3eifs"]
 [ext_resource type="Script" uid="uid://deary6655s7mr" path="res://breakable_box.gd" id="8_8gvve"]
-[ext_resource type="Material" path="res://a-3/Materials/CoinMaterial.tres" id="8_i1ncx"]
+[ext_resource type="Material" uid="uid://b2tk1gjpeii38" path="res://a-3/Materials/CoinMaterial.tres" id="8_i1ncx"]
+[ext_resource type="Script" uid="uid://bqfwtt7wxgxco" path="res://obj_3.gd" id="8_lnqwb"]
 [ext_resource type="PackedScene" uid="uid://oc5yalkhr5qf" path="res://coin.tscn" id="9_ag3fj"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_oejsf"]
@@ -117,8 +118,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.72965, 0.380493, -1.24175)
 mesh = SubResource("BoxMesh_77vbc")
 
 [node name="Obj3" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.21444, -0.588435, 0.779589, -0.939555, 0.342397, 0, -0.266929, -0.732467, -0.626291, 1.69293, 0.173551, 5.75798)
+transform = Transform3D(-0.21444005, -0.588435, 0.779589, -0.9760599, 0.09939216, -0.19346179, 0.03635457, -0.80241185, -0.5956618, 0.057247996, 3.977614, 7.3107786)
 mesh = SubResource("BoxMesh_77vbc")
+script = ExtResource("8_lnqwb")
 
 [node name="Obj4" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.21444, -0.588435, 0.779589, -0.939555, 0.342397, 0, -0.266929, -0.732467, -0.626291, -4.59, 0.169, 4.452)
