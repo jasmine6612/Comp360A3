@@ -7,7 +7,7 @@
 - Akshit Marwaha
 - Manmeet Singh
 - Bhavik Wadhwa
-- add
+- Michael Bassi
 - add 
 
 ---
@@ -186,7 +186,7 @@ These challenges demonstrate debugging, problem-solving, and engine-level unders
 - Handled debugging & project recovery
 
 **Michael Bassi**
-- Added non-interactive background buildings around the arena to improve the overall visual environment
+- Added background buildings around the arena to improve the overall visual environment
 - Implemented a blue sky background using Godot’s WorldEnvironment and ProceduralSkyMaterial
 - Adjusted the arena layout and boundary walls to better frame the playable area without affecting gameplay
 
