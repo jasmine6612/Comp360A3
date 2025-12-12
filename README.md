@@ -92,6 +92,7 @@ if robot_hit:
     spawn_particles()
     spawn_coin()
     queue_free()
+```
 
 ## Particle Systems
 
