@@ -2,7 +2,7 @@ extends StaticBody3D
 
 @export var coin_scene: PackedScene
 @export var coin_count: int = 3
-@export var coin_spread: float = 0.4
+@export var coin_spread: float = 1.0
 
 # We receive the world position of the box from breaker_area.gd
 func break_object(origin: Vector3) -> void:
@@ -20,7 +20,7 @@ func break_object(origin: Vector3) -> void:
 
 		var offset := Vector3(
 			randf_range(-coin_spread, coin_spread),
-			0.5,  # a bit above the floor
+			1.2,
 			randf_range(-coin_spread, coin_spread)
 		)
 

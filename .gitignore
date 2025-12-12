@@ -1,18 +1,5 @@
-# Godot
 *.import
 *.uid
 .godot/
-
-# Images
-*.png.import
-*.jpg.import
-*.svg.import
-
-# Mac
 .DS_Store
 ._*
-.Spotlight*
-.Trashes
-
-# System
-Thumbs.db
