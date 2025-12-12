@@ -162,7 +162,10 @@ These challenges demonstrate debugging, problem-solving, and engine-level unders
 
 
 **Bao**
-
+- Programmatic Texture Generation System
+- Complete Material Library
+- Material Setup Automation
+- Technical stuff: use noise algo, pattern generation, color gradients
 
 **Akshit Marwaha**
 - Assisted with mesh placement and physics setup
