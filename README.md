@@ -6,7 +6,7 @@
 - Bao  
 - Akshit Marwaha
 - Manmeet Singh
-- Bhavik
+- Bhavik Wadhwa
 - add
 - add 
 
@@ -169,6 +169,16 @@ These challenges demonstrate debugging, problem-solving, and engine-level unders
 - Complete Material Library
 - Material Setup Automation
 - Technical stuff: use noise algo, pattern generation, color gradients
+
+**Bhavik Wadhwa**
+- Implemented the RobotPlayer controller using CharacterBody3D
+- Added third-person camera system using SpringArm3D and Camera3D
+- Integrated robot arm animations (idle, grab, pickup) with gameplay input
+- Designed and implemented smash interaction system using Area3D
+- Integrated breakable box destruction with coin spawning
+- Fixed coin pickup logic to prevent instant despawn
+- Handled collision tuning, animation locking, and interaction debugging
+- Managed Git integration, merging, and repository synchronization
 
 **Akshit Marwaha**
 - Assisted with mesh placement and physics setup
