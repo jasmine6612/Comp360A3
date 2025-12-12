@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://oc5yalkhr5qf"]
 
-[ext_resource type="Script" uid="uid://c1fxt7adl6lpr" path="res://coin.gd" id="1_d5gmh"]
+[ext_resource type="Script" uid="uid://r74p1ixa81jo" path="res://coin.gd" id="1_d5gmh"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_0t63x"]
 
