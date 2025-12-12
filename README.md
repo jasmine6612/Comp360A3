@@ -159,7 +159,10 @@ These challenges demonstrate debugging, problem-solving, and engine-level unders
 ## Team Contributions
 
 **Jasmine**
-
+- Created a spark particle system that triggers when the robot arm destroys the box
+- Animated obj3 to move back and forth for the simulation
+- Built the initial greyboxed environment using MeshInstance3D (floor, walls, objects)
+- Applied Bao’s materials to the 3D layout (floor, walls, objects)
 
 **Bao**
 - Programmatic Texture Generation System
