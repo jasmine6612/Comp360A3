@@ -8,6 +8,7 @@
 - Manmeet Singh
 - Bhavik Wadhwa
 - Michael Bassi
+- Unnati Sharma
   
 
 ---
@@ -216,6 +217,10 @@ Stability & Integration Work
 - Implemented a blue sky background using Godot’s WorldEnvironment and ProceduralSkyMaterial
 - Adjusted the arena layout and boundary walls to better frame the playable area without affecting gameplay
 
+**Unnati Sharma**
+- Implemented breakable object mechanics in a Godot 4 3D robot simulation using collision-based interactions and object lifecycle management (queue_free).
+- Developed dynamic coin spawning logic triggered by object destruction, integrating gameplay feedback with existing interaction and particle systems.
+- Integrated gameplay interaction logic with the robot’s smash system to ensure reliable object destruction and collectible behavior.
 ---
 
 ## Licenses
