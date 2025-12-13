@@ -90,9 +90,9 @@ res://
 **Core logic (simplified):**
 ```gdscript
 if robot_hit:
-    spawn_particles()
-    spawn_coin()
-    queue_free()
+	spawn_particles()
+	spawn_coin()
+	queue_free()
 ```
 
 ## Particle Systems

@@ -1,19 +1,19 @@
-[gd_scene load_steps=33 format=3 uid="uid://dl2rkyoea3ao8"]
+[gd_scene load_steps=37 format=3 uid="uid://dl2rkyoea3ao8"]
 
 [ext_resource type="Material" uid="uid://bh7gwb058rpus" path="res://greyboxing/mat_light_grey.tres" id="1_hpkpe"]
-[ext_resource type="Material" uid="uid://ddwfc13q63ehk" path="res://greyboxing/mat_dark_grey.tres" id="2_n4rb7"]
-[ext_resource type="Material" uid="uid://3q1cc6v8fy3l" path="res://greyboxing/mat_greyish_blue.tres" id="3_oejsf"]
+[ext_resource type="Material" uid="uid://cdtm0wewfsgc1" path="res://a-3/Materials/BrickWallMaterial.tres" id="3_i1ncx"]
 [ext_resource type="Material" uid="uid://y7xt6ie14j8t" path="res://greyboxing/mat_light_brown.tres" id="4_1a3tg"]
+[ext_resource type="Material" uid="uid://dmnv1nv5rhhhx" path="res://a-3/Materials/RobotBodyMaterial.tres" id="4_2bp0p"]
 [ext_resource type="Texture2D" uid="uid://xq5hlvgcj18q" path="res://greyboxing/spark_02.png" id="4_rq656"]
-[ext_resource type="Script" uid="uid://ddn7874u34jes" path="res://particle_controller.gd" id="5_8gvve"]
+[ext_resource type="Script" uid="uid://b7nrevqtgli83" path="res://particle_controller.gd" id="5_8gvve"]
 [ext_resource type="Material" uid="uid://w5nraop70cnb" path="res://greyboxing/mat_gold.tres" id="5_rq656"]
-[ext_resource type="Script" uid="uid://878bpgu7w03b" path="res://breaker_area.gd" id="6_h5oe0"]
-[ext_resource type="Script" uid="uid://cavj1ri32y8o8" path="res://breakable_box.gd" id="8_8gvve"]
+[ext_resource type="Script" uid="uid://y62dyq77vnth" path="res://breaker_area.gd" id="6_h5oe0"]
+[ext_resource type="Script" uid="uid://deary6655s7mr" path="res://breakable_box.gd" id="8_8gvve"]
 [ext_resource type="PackedScene" uid="uid://oc5yalkhr5qf" path="res://coin.tscn" id="9_ag3fj"]
 [ext_resource type="PackedScene" uid="uid://b4xwrjv0lqqp4" path="res://a-3/Scenes/RobotPlayer.tscn" id="11_lnqwb"]
-[ext_resource type="Script" path="res://path_mover.gd" id="PATH_MOVER_SCRIPT"]
 [ext_resource type="FontFile" path="res://fonts/SansitaFont.tres" id="CUSTOM_FONT"]
-[ext_resource type="Script" path="res://ui_title.gd" id="UI_TITLE_SCRIPT"]
+[ext_resource type="Script" uid="uid://dmn2ehg5wfgwr" path="res://path_mover.gd" id="PATH_MOVER_SCRIPT"]
+[ext_resource type="Script" uid="uid://dnbj4x7ke1tao" path="res://ui_title.gd" id="UI_TITLE_SCRIPT"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lnqwb"]
 albedo_color = Color(1, 0.2838258, 0.25479302, 1)
@@ -23,22 +23,11 @@ material = ExtResource("1_hpkpe")
 size = Vector2(50, 50)
 
 [sub_resource type="BoxMesh" id="BoxMesh_qxd3q"]
-material = ExtResource("2_n4rb7")
+material = ExtResource("3_i1ncx")
 size = Vector3(4, 3, 0.2)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_qxd3q"]
-material = ExtResource("3_oejsf")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_oejsf"]
-lifetime_randomness = 0.7
-initial_velocity_max = 11.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8gvve"]
-transparency = 1
-albedo_texture = ExtResource("4_rq656")
-
-[sub_resource type="QuadMesh" id="QuadMesh_1a3tg"]
-material = SubResource("StandardMaterial3D_8gvve")
+material = ExtResource("4_2bp0p")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_lnqwb"]
 radius = 21.4603
@@ -85,9 +74,18 @@ material = SubResource("StandardMaterial3D_8v2ps")
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Curve3D" id="PathCurve3D"]
-data = {
-	"points": PackedVector3Array(0, 2, -5, 5, 3, 0, 0, 4, 5, -5, 3, 0)
-}
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_oejsf"]
+lifetime_randomness = 0.7
+initial_velocity_max = 11.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8gvve"]
+transparency = 1
+albedo_texture = ExtResource("4_rq656")
+
+[sub_resource type="QuadMesh" id="QuadMesh_1a3tg"]
+material = SubResource("StandardMaterial3D_8gvve")
+
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(0.9998477, 0, 0.017452406, 0, 1, 0, -0.017452406, 0, 0.9998477, 0, 0, 0)
 
@@ -134,15 +132,6 @@ mesh = SubResource("BoxMesh_qxd3q")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0854948, 0.440049, 0.101716)
 mesh = SubResource("CylinderMesh_qxd3q")
 
-[node name="SparkParticle3D" type="GPUParticles3D" parent="RobotObj"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.5)
-amount = 21
-process_material = SubResource("ParticleProcessMaterial_oejsf")
-draw_pass_1 = SubResource("QuadMesh_1a3tg")
-
-[node name="ParticleController" type="Node3D" parent="RobotObj"]
-script = ExtResource("5_8gvve")
-
 [node name="BreakerArea" type="Area3D" parent="RobotObj"]
 monitoring = false
 monitorable = false
@@ -154,32 +143,26 @@ shape = SubResource("SphereShape3D_lnqwb")
 
 [node name="Obj1" type="MeshInstance3D" parent="." groups=["breakable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00868, 0.308033, -10.0076)
-visible = false
 mesh = SubResource("BoxMesh_77vbc")
 
 [node name="Obj2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.72965, 0.380493, -1.24175)
-visible = false
 mesh = SubResource("BoxMesh_77vbc")
 
 [node name="Obj3" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.21444, -0.588435, 0.779589, -0.939555, 0.342397, 0, -0.266929, -0.732467, -0.626291, 1.69293, 0.173551, 5.75798)
-visible = false
 mesh = SubResource("BoxMesh_77vbc")
 
 [node name="Obj4" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.21444, -0.588435, 0.779589, -0.939555, 0.342397, 0, -0.266929, -0.732467, -0.626291, -4.59, 0.169, 4.452)
-visible = false
 mesh = SubResource("BoxMesh_77vbc")
 
 [node name="Coin01" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.999988, 0, -0.00479964, 0.00479893, 0.0171732, 0.999841, 8.24253e-05, -0.999853, 0.017173, 3.89358, 0.229777, -10.1484)
-visible = false
 mesh = SubResource("SphereMesh_oejsf")
 
 [node name="Coin02" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.999988, 0, -0.00479964, 0.00479893, 0.0171732, 0.999841, 8.24253e-05, -0.999853, 0.017173, 3.71116, 0.777263, -10.5837)
-visible = false
 mesh = SubResource("SphereMesh_oejsf")
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -761,7 +744,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.61508, 2.5, 9.67562)
 curve = SubResource("PathCurve3D")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-loop = true
 script = ExtResource("PATH_MOVER_SCRIPT")
 
 [node name="PathMover" type="MeshInstance3D" parent="Path3D/PathFollow3D"]
@@ -770,15 +752,30 @@ mesh = SubResource("BoxMesh_ixrg6")
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="TitlePanel" type="Panel" parent="UI"]
+modulate = Color(0, 0, 0, 0.5)
 offset_left = 10.0
 offset_top = 10.0
 offset_right = 360.0
 offset_bottom = 60.0
-modulate = Color(0, 0, 0, 0.5)
 
 [node name="TitleLabel" type="Label" parent="UI"]
-script = ExtResource("UI_TITLE_SCRIPT")
 offset_left = 24.0
 offset_top = 18.0
-text = "Assignment 3 Prototype"
 theme_override_fonts/font = ExtResource("CUSTOM_FONT")
+text = "Assignment 3 Prototype"
+script = ExtResource("UI_TITLE_SCRIPT")
+
+[node name="SparkParticle3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0854948, 1.4400489, 0.60171604)
+emitting = false
+amount = 21
+one_shot = true
+explosiveness = 1.0
+randomness = 0.05
+process_material = SubResource("ParticleProcessMaterial_oejsf")
+draw_pass_1 = SubResource("QuadMesh_1a3tg")
+
+[node name="ParticleController" type="Node3D" parent="." node_paths=PackedStringArray("spark_particles")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0854948, 0.440049, 0.101716004)
+script = ExtResource("5_8gvve")
+spark_particles = NodePath("../SparkParticle3D")
