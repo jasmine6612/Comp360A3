@@ -151,7 +151,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.72965, 0.380493, -1.24175)
 mesh = SubResource("BoxMesh_77vbc")
 
 [node name="Obj3" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.21462177, -0.5883698, 0.77958834, -0.94240934, 0.33438605, -0.007079536, -0.25651821, -0.73621124, -0.62625194, 0.30208045, 0.38575926, 5.649531)
+transform = Transform3D(-0.21462186, -0.58837014, 0.77958834, -0.94240934, 0.33438605, -0.007079536, -0.25651821, -0.7362116, -0.62625194, 3.4450588, 3.539028, -1.9275724)
+mesh = SubResource("BoxMesh_77vbc")
+script = ExtResource("7_2bp0p")
+
+[node name="Obj5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.21699385, -0.58767146, 0.7794585, -0.9686916, 0.22829846, -0.09754953, -0.12062227, -0.7762232, -0.6188119, 0.32293442, 0.82895124, 5.55965)
+mesh = SubResource("BoxMesh_77vbc")
+script = ExtResource("7_2bp0p")
+
+[node name="Obj6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.21699385, -0.5876712, 0.7794583, -0.9686916, 0.22829846, -0.09754953, -0.12062227, -0.7762232, -0.6188119, -1.7801664, 2.9603844, 3.7461762)
 mesh = SubResource("BoxMesh_77vbc")
 script = ExtResource("7_2bp0p")
 
