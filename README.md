@@ -207,10 +207,14 @@ Stability & Integration Work
 - Resolved missing resource references and UID issues after project import.
 - Confirmed all added systems (UI, spline, export) run without errors.
 
-**Akshit Marwaha**
-- Assisted with mesh placement and physics setup
-- Created full project documentation and README
-- Handled debugging & project recovery
+## Akshit Marwaha – Integration, Debugging, and Documentation
+
+- Co-created and presented the final demo video, explaining system functionality and showcasing gameplay features.
+- Created the full project documentation and structured the GitHub `README.md` for clear alignment with COMP 360 Assignment 3 requirements.
+- Assisted in Integration of individual scenes, meshes into the main `greyboxing.tscn` environment.
+- Assisted with physics setup and collision alignment for breakable objects and robot interactions.
+- Diagnosed and resolved project import issues caused by missing `.import` / `.godot` directories and invalid UID references.
+- Assisted with camera debugging and gameplay clarity, including identifying clipping and runtime camera angle issues.
 
 **Michael Bassi**
 - Added background buildings around the arena to improve the overall visual environment
