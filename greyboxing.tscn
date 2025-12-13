@@ -1,18 +1,19 @@
-[gd_scene load_steps=35 format=3 uid="uid://dl2rkyoea3ao8"]
+[gd_scene load_steps=33 format=3 uid="uid://dl2rkyoea3ao8"]
 
 [ext_resource type="Material" uid="uid://bh7gwb058rpus" path="res://greyboxing/mat_light_grey.tres" id="1_hpkpe"]
-[ext_resource type="Material" uid="uid://cdtm0wewfsgc1" path="res://a-3/Materials/BrickWallMaterial.tres" id="3_3eifs"]
+[ext_resource type="Material" uid="uid://ddwfc13q63ehk" path="res://greyboxing/mat_dark_grey.tres" id="2_n4rb7"]
+[ext_resource type="Material" uid="uid://3q1cc6v8fy3l" path="res://greyboxing/mat_greyish_blue.tres" id="3_oejsf"]
 [ext_resource type="Material" uid="uid://y7xt6ie14j8t" path="res://greyboxing/mat_light_brown.tres" id="4_1a3tg"]
-[ext_resource type="Material" uid="uid://dmnv1nv5rhhhx" path="res://a-3/Materials/RobotBodyMaterial.tres" id="4_3eifs"]
 [ext_resource type="Texture2D" uid="uid://xq5hlvgcj18q" path="res://greyboxing/spark_02.png" id="4_rq656"]
-[ext_resource type="Script" uid="uid://b7nrevqtgli83" path="res://particle_controller.gd" id="5_8gvve"]
-[ext_resource type="Script" uid="uid://y62dyq77vnth" path="res://breaker_area.gd" id="6_h5oe0"]
-[ext_resource type="Script" uid="uid://deary6655s7mr" path="res://breakable_box.gd" id="8_8gvve"]
+[ext_resource type="Script" uid="uid://ddn7874u34jes" path="res://particle_controller.gd" id="5_8gvve"]
+[ext_resource type="Material" uid="uid://w5nraop70cnb" path="res://greyboxing/mat_gold.tres" id="5_rq656"]
+[ext_resource type="Script" uid="uid://878bpgu7w03b" path="res://breaker_area.gd" id="6_h5oe0"]
+[ext_resource type="Script" uid="uid://cavj1ri32y8o8" path="res://breakable_box.gd" id="8_8gvve"]
 [ext_resource type="PackedScene" uid="uid://oc5yalkhr5qf" path="res://coin.tscn" id="9_ag3fj"]
-[ext_resource type="Script" uid="uid://bqfwtt7wxgxco" path="res://obj_3.gd" id="9_axsqh"]
-[ext_resource type="Material" uid="uid://byq5o4pug7bf0" path="res://a-3/Materials/FuturisticPanelMaterial.tres" id="9_i1ncx"]
-[ext_resource type="Material" uid="uid://b2tk1gjpeii38" path="res://a-3/Materials/CoinMaterial.tres" id="11_2bp0p"]
 [ext_resource type="PackedScene" uid="uid://b4xwrjv0lqqp4" path="res://a-3/Scenes/RobotPlayer.tscn" id="11_lnqwb"]
+[ext_resource type="Script" path="res://path_mover.gd" id="PATH_MOVER_SCRIPT"]
+[ext_resource type="FontFile" path="res://fonts/SansitaFont.tres" id="CUSTOM_FONT"]
+[ext_resource type="Script" path="res://ui_title.gd" id="UI_TITLE_SCRIPT"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lnqwb"]
 albedo_color = Color(1, 0.2838258, 0.25479302, 1)
@@ -22,11 +23,11 @@ material = ExtResource("1_hpkpe")
 size = Vector2(50, 50)
 
 [sub_resource type="BoxMesh" id="BoxMesh_qxd3q"]
-material = ExtResource("3_3eifs")
+material = ExtResource("2_n4rb7")
 size = Vector3(4, 3, 0.2)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_qxd3q"]
-material = ExtResource("4_3eifs")
+material = ExtResource("3_oejsf")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_oejsf"]
 lifetime_randomness = 0.7
@@ -47,7 +48,7 @@ material = ExtResource("4_1a3tg")
 size = Vector3(0.8, 0.8, 0.8)
 
 [sub_resource type="SphereMesh" id="SphereMesh_oejsf"]
-material = ExtResource("11_2bp0p")
+material = ExtResource("5_rq656")
 radius = 0.2
 height = 0.001
 
@@ -71,7 +72,6 @@ ambient_light_energy = 3.45
 albedo_color = Color(0.79818195, 0.4007988, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_rgpcx"]
-material = ExtResource("3_3eifs")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8v2ps"]
 albedo_color = Color(0.93862426, 0.9262593, 0.92934513, 1)
@@ -84,13 +84,17 @@ material = SubResource("StandardMaterial3D_8v2ps")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u0w43"]
 albedo_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Curve3D" id="PathCurve3D"]
+data = {
+	"points": PackedVector3Array(0, 2, -5, 5, 3, 0, 0, 4, 5, -5, 3, 0)
+}
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(0.9998477, 0, 0.017452406, 0, 1, 0, -0.017452406, 0, 0.9998477, 0, 0, 0)
 
 [node name="RobotPlayer" parent="." instance=ExtResource("11_lnqwb")]
 
 [node name="Floor" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, -7.275958e-12, 0, 0, 0.999991, -0.00415387, 0, 0.0041538705, 0.999991, 9.615081, -0.0160084, 9.67562)
+transform = Transform3D(1, 0, 0, 0, 0.999991, -0.00415387, 0, 0.00415387, 0.999991, 9.61508, -0.0160084, 9.67562)
 material_override = SubResource("StandardMaterial3D_lnqwb")
 mesh = SubResource("PlaneMesh_oejsf")
 
@@ -150,29 +154,32 @@ shape = SubResource("SphereShape3D_lnqwb")
 
 [node name="Obj1" type="MeshInstance3D" parent="." groups=["breakable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00868, 0.308033, -10.0076)
+visible = false
 mesh = SubResource("BoxMesh_77vbc")
 
 [node name="Obj2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.72965, 0.380493, -1.24175)
+visible = false
 mesh = SubResource("BoxMesh_77vbc")
 
 [node name="Obj3" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.21559246, -0.5880497, 0.7795617, -0.95559144, 0.29130965, -0.044530056, -0.20090817, -0.7545435, -0.62473977, 0.008761644, 0.6042582, 5.9019127)
-material_override = ExtResource("9_i1ncx")
+transform = Transform3D(-0.21444, -0.588435, 0.779589, -0.939555, 0.342397, 0, -0.266929, -0.732467, -0.626291, 1.69293, 0.173551, 5.75798)
+visible = false
 mesh = SubResource("BoxMesh_77vbc")
-script = ExtResource("9_axsqh")
 
 [node name="Obj4" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.21444, -0.588435, 0.779589, -0.939555, 0.342397, 0, -0.266929, -0.732467, -0.626291, -4.59, 0.169, 4.452)
-material_override = ExtResource("9_i1ncx")
+visible = false
 mesh = SubResource("BoxMesh_77vbc")
 
 [node name="Coin01" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.999988, 0, -0.00479964, 0.00479893, 0.0171732, 0.999841, 8.24253e-05, -0.999853, 0.017173, 3.89358, 0.229777, -10.1484)
+visible = false
 mesh = SubResource("SphereMesh_oejsf")
 
 [node name="Coin02" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.999988, 0, -0.00479964, 0.00479893, 0.0171732, 0.999841, 8.24253e-05, -0.999853, 0.017173, 3.71116, 0.777263, -10.5837)
+visible = false
 mesh = SubResource("SphereMesh_oejsf")
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -748,3 +755,30 @@ mesh = SubResource("BoxMesh_ixrg6")
 transform = Transform3D(0.00046981504, 0.028103523, -0.00051836343, -0.010548576, 0.0012463152, -0.00054191373, -0.00014254687, 0.00039702654, 0.03839357, 0.5118967, -0.4569971, 0.18315268)
 mesh = SubResource("CylinderMesh_k354n")
 surface_material_override/0 = SubResource("StandardMaterial3D_u0w43")
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.61508, 2.5, 9.67562)
+curve = SubResource("PathCurve3D")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+loop = true
+script = ExtResource("PATH_MOVER_SCRIPT")
+
+[node name="PathMover" type="MeshInstance3D" parent="Path3D/PathFollow3D"]
+mesh = SubResource("BoxMesh_ixrg6")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="TitlePanel" type="Panel" parent="UI"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 360.0
+offset_bottom = 60.0
+modulate = Color(0, 0, 0, 0.5)
+
+[node name="TitleLabel" type="Label" parent="UI"]
+script = ExtResource("UI_TITLE_SCRIPT")
+offset_left = 24.0
+offset_top = 18.0
+text = "Assignment 3 Prototype"
+theme_override_fonts/font = ExtResource("CUSTOM_FONT")
