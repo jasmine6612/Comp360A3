@@ -4,6 +4,8 @@ extends StaticBody3D
 @export var coin_count: int = 3
 @export var coin_spread: float = 1.0
 
+@export var ParticleController: Node3D
+
 # We receive the world position of the box from breaker_area.gd
 func break_object(origin: Vector3) -> void:
 	if coin_scene == null:
@@ -29,3 +31,4 @@ func break_object(origin: Vector3) -> void:
 		# (or: coin.position = origin + offset, since parent is the root)
 
 	queue_free()  # remove the box
+	
