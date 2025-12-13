@@ -36,6 +36,7 @@ The project features a controllable robot player that interacts with destructibl
 ---
 
 ## Project Structure
+```
 res://
 ├── a-3/ # Robot scene and scripts
 ├── greyboxing/ # Arena layout and environment meshes
@@ -48,7 +49,7 @@ res://
 ├── project.godot # Godot project configuration
 ├── icon.svg # Project icon
 └── README.md # Project documentation
-
+```
 
 ---
 
@@ -180,25 +181,30 @@ These challenges demonstrate debugging, problem-solving, and engine-level unders
 - Handled collision tuning, animation locking, and interaction debugging
 - Managed Git integration, merging, and repository synchronization
 
-**Manmeet Singh
+**Manmeet Singh**
+
 Windows Executable Export
--Set up and configured the Windows Desktop export preset, ensuring the project builds correctly as a standalone .exe.
--Verified resource inclusion, compression formats, and architecture settings.
--Tested the exported build to confirm proper loading and gameplay functionality.
+
+- Set up and configured the Windows Desktop export preset, ensuring the project builds correctly as a standalone .exe.
+- Verified resource inclusion, compression formats, and architecture settings.
+- Tested the exported build to confirm proper loading and gameplay functionality.
 
 Path3D Spline Adaptation
--Implemented a procedural movement system using Path3D, Curve3D, and PathFollow3D.
--Created the path_mover.gd script to animate a mesh along a looping spline with visible rotation.
--Integrated the spline system into the main arena to meet the adaptation requirement.
+
+- Implemented a procedural movement system using Path3D, Curve3D, and PathFollow3D.
+- Created the path_mover.gd script to animate a mesh along a looping spline with visible rotation.
+- Integrated the spline system into the main arena to meet the adaptation requirement.
 
 Custom Font + Animated UI Adaptation
--Added the Sansita custom font and created a polished UI title overlay.
--Developed ui_title.gd to animate the title with fade-in and floating motion.
--Ensured UI elements integrate cleanly into the main scene without affecting gameplay.
+
+- Added the Sansita custom font and created a polished UI title overlay.
+- Developed ui_title.gd to animate the title with fade-in and floating motion.
+- Ensured UI elements integrate cleanly into the main scene without affecting gameplay.
 
 Stability & Integration Work
--Resolved missing resource references and UID issues after project import.
--Confirmed all added systems (UI, spline, export) run without errors.
+
+- Resolved missing resource references and UID issues after project import.
+- Confirmed all added systems (UI, spline, export) run without errors.
 
 **Akshit Marwaha**
 - Assisted with mesh placement and physics setup
@@ -214,6 +220,8 @@ Stability & Integration Work
 
 ## Licenses
 - Creative Commons CCO: Kenney 2D Particle Pack used for spark particles
+
+---
 
 ## Conclusion
 
