@@ -227,3 +227,6 @@ Stability & Integration Work
 
 This project demonstrates fundamental computer graphics concepts through an interactive 3D Godot simulation. By integrating physics, particles, collision detection, materials, and camera control, the project fulfills all COMP 360 Assignment 3 requirements and provides a clear demonstration of real-time rendering and interaction using Godot 4.
 
+## GitHub Repository
+
+[GitHub Repository](https://github.com/jasmine6612/Comp360A3)
