@@ -89,9 +89,9 @@ res://
 **Core logic (simplified):**
 ```gdscript
 if robot_hit:
-    spawn_particles()
-    spawn_coin()
-    queue_free()
+	spawn_particles()
+	spawn_coin()
+	queue_free()
 ```
 
 ## Particle Systems
@@ -190,4 +190,3 @@ These challenges demonstrate debugging, problem-solving, and engine-level unders
 ## Conclusion
 
 This project demonstrates fundamental computer graphics concepts through an interactive 3D Godot simulation. By integrating physics, particles, collision detection, materials, and camera control, the project fulfills all COMP 360 Assignment 3 requirements and provides a clear demonstration of real-time rendering and interaction using Godot 4.
-
